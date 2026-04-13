@@ -1,0 +1,82 @@
+STEPS TO RUN THIS PROJECT (Income vs Expense Pie Chart Dashboard)
+================================================================
+
+STEP 1: REQUIREMENTS
+--------------------
+- PHP installed (with mysqli extension)
+- MySQL or MariaDB installed
+- phpMyAdmin (or any MySQL client) to create the database
+- Web server: XAMPP / WAMP / Laragon, OR PHP built-in server
+
+
+STEP 2: START YOUR SERVERS
+--------------------------
+- If using XAMPP/WAMP/Laragon: start Apache and MySQL from the control panel.
+- Make sure MySQL is running (required for database).
+
+
+STEP 3: CREATE THE DATABASE
+---------------------------
+1. Open phpMyAdmin in your browser (e.g. http://localhost/phpmyadmin).
+2. Click the "SQL" tab.
+3. Open the file "setup.sql" from this project folder in a text editor.
+4. Copy all the content from setup.sql.
+5. Paste it into the SQL box in phpMyAdmin.
+6. Click "Go" to run it.
+   This will create:
+   - Database: income_expense
+   - Table: transactions
+   - Sample income and expense rows
+
+
+STEP 4: CONFIGURE DATABASE CONNECTION (if needed)
+-------------------------------------------------
+1. Open the file: config/db.php
+2. Change these if your MySQL setup is different:
+   - DB_HOST = 'localhost'   (usually keep as is)
+   - DB_USER = 'root'        (your MySQL username)
+   - DB_PASS = ''            (your MySQL password)
+   - DB_NAME = 'income_expense'  (keep as is if you used setup.sql as-is)
+3. Save the file.
+
+
+STEP 5: RUN THE PROJECT
+-----------------------
+Choose one option:
+
+OPTION A - Using XAMPP/WAMP/Laragon:
+1. Copy this entire project folder (e.g. "Test") into:
+   - XAMPP: C:\xampp\htdocs\
+   - WAMP: C:\wamp64\www\  (or similar)
+   - Laragon: C:\laragon\www\
+2. Open your browser and go to:
+   http://localhost/Test/
+   (Use your actual folder name if different from "Test".)
+
+OPTION B - Using PHP built-in server:
+1. Open Command Prompt or PowerShell.
+2. Go to the project folder, e.g.:
+   cd c:\Test
+3. Run:
+   php -S localhost:8000
+4. Open your browser and go to:
+   http://localhost:8000
+
+
+STEP 6: VIEW THE DASHBOARD
+---------------------------
+- You should see the Income vs Expense dashboard with:
+  - Total Income and Total Expense cards
+  - A pie chart (Income vs Expense)
+  - Net balance (Income minus Expense)
+- To change the data: add or edit rows in the "transactions" table in phpMyAdmin, then refresh the dashboard page.
+
+
+TROUBLESHOOTING
+---------------
+- "Connection failed": Check MySQL is running and config/db.php has correct user/password.
+- Blank or error page: Ensure you ran setup.sql so the database and table exist.
+- Chart not loading: Ensure you are opening the site via http (e.g. http://localhost/...) not by opening index.php as a file (file://).
+
+================================================================
+End of steps.
